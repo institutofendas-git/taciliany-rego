@@ -1,7 +1,9 @@
 # Taciliany Rêgo
 
-Site profissional estático: HTML, CSS e JavaScript no index.html, com imagens locais e fontes do Google Fonts. Abra index.html no navegador ou sirva esta pasta com `python3 -m http.server 8000`.
+Site profissional estático, com HTML, CSS e JavaScript no index.html.
 
-Fonte de trabalho: wiki-marketing/sites/taciliany-rego/prototipo/ no workspace de Ilo. Atualizado em 17/11/2026: frases sem tachado, símbolos na lista, menu móvel estável e gavetas com rolagem própria e bloqueio do fundo.
+Prévia: https://institutofendas-git.github.io/taciliany-rego/
 
-Domínio e publicação do site ainda não configurados. Foto provisória e dados profissionais seguem pendentes de revisão conforme a ficha na wiki.
+Fonte principal: /Users/franciscoilo/Documents/Claude/Projects/Wiki/sites/taciliany-rego/prototipo/
+
+Atualizado em 17/11/2026: correções de texto, menu móvel e gavetas; imagem social e favicons. A prévia não solicita indexação. O domínio comprado para Taciliany não foi configurado.
