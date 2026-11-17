@@ -12,8 +12,8 @@
 <meta property="og:title" content="Taciliany Rêgo · Psicoterapia online para mulheres">
 <meta property="og:description" content="Para mulheres que não se reconhecem no roteiro. Conheça o atendimento psicológico online de Taciliany Rêgo, CRP 11/18345.">
 <meta property="og:url" content="https://institutofendas-git.github.io/taciliany-rego/">
-<meta property="og:image" content="https://institutofendas-git.github.io/taciliany-rego/compartilhar.jpg">
-<meta property="og:image:secure_url" content="https://institutofendas-git.github.io/taciliany-rego/compartilhar.jpg">
+<meta property="og:image" content="https://institutofendas-git.github.io/taciliany-rego/compartilhar-v2.jpg">
+<meta property="og:image:secure_url" content="https://institutofendas-git.github.io/taciliany-rego/compartilhar-v2.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -21,16 +21,19 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Taciliany Rêgo · Psicoterapia online para mulheres">
 <meta name="twitter:description" content="Para mulheres que não se reconhecem no roteiro. Atendimento psicológico online, CRP 11/18345.">
-<meta name="twitter:image" content="https://institutofendas-git.github.io/taciliany-rego/compartilhar.jpg">
+<meta name="twitter:image" content="https://institutofendas-git.github.io/taciliany-rego/compartilhar-v2.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#3F1521">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/CormorantGaramond-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="fonts/InstrumentSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
 <style>
+@font-face{font-family:"Cormorant Garamond";src:url("fonts/CormorantGaramond-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url("fonts/InstrumentSans-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url("fonts/InstrumentSans-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+
 /*
 VOICE: liberdade vivida por dentro; calma, firme, um pouco irreverente. Muito vazio.
 IDEA: as pranchas da identidade — campos chapados de cor com um recorte grande saindo pela borda, como o post "No seu próprio ritmo".
@@ -68,14 +71,17 @@ nav .links a{font-size:15px;text-decoration:none;white-space:nowrap;padding:10px
 nav .zap{min-height:44px;padding:0 22px;font-size:15px}
 .menu-btn{display:none;margin-left:auto;min-height:44px;padding:0 20px;border-radius:999px;border:0;background:var(--vinho);color:var(--creme);font:500 15px "Instrument Sans";cursor:pointer;align-items:center;gap:10px}
 .menu-btn i{display:inline-grid;gap:4px}.menu-btn i::before,.menu-btn i::after{content:"";width:16px;height:1.5px;background:currentColor;display:block}
-.menu{position:fixed;inset:0;z-index:50;background:var(--vinho);color:var(--creme);padding:22px max(6vw,22px) 40px;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .3s;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
+.menu{position:fixed;inset:0;z-index:50;background:var(--vinho);color:var(--creme);padding:22px max(6vw,22px) 40px;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .3s;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
 .menu.on{opacity:1;pointer-events:auto}
-.menu .topo{display:flex;justify-content:flex-end}
-.menu .x{width:48px;height:48px;border-radius:50%;border:1px solid #F0EDE570;background:none;color:inherit;font-size:24px;cursor:pointer}
-.menu ul{list-style:none;padding:0;margin:auto 0;position:relative;z-index:1}
-.menu li a{display:block;font:400 clamp(40px,10vw,58px)/1.12 "Cormorant Garamond",serif;text-decoration:none;padding:4px 0}
+.menu .topo{display:flex;justify-content:flex-end;position:sticky;top:0;z-index:3;flex:none}
+.menu .x{position:relative;z-index:3;flex:none;width:48px;height:48px;border-radius:50%;border:1px solid #F0EDE570;background:var(--vinho);color:inherit;font-size:24px;cursor:pointer}
+.menu ul{list-style:none;padding:28px 0;margin:auto 0;position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:min(100%,900px);align-self:center}
+.menu li a{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;border:1px solid #F0EDE580;border-radius:16px;background:#F0EDE50d;font:400 clamp(28px,4vw,38px)/1.12 "Cormorant Garamond",serif;text-decoration:none;padding:16px 22px;transition:background .2s,border-color .2s}
+.menu li a::after{content:"↗";font:400 21px "Instrument Sans",sans-serif;color:var(--nevoa)}
+.menu li a:hover,.menu li a:focus-visible{background:#F0EDE524;border-color:var(--creme)}
+@media(max-width:600px){.menu ul{grid-template-columns:1fr;gap:8px;padding:20px 0}.menu li a{min-height:54px;padding:12px 18px;font-size:28px}}
 .menu .btn{align-self:flex-start;position:relative;z-index:1}
-.menu .ge{position:absolute;right:-90px;top:-40px;width:340px;height:310px;color:var(--nevoa);opacity:.3}
+.menu .ge{pointer-events:none;position:absolute;right:-90px;top:-40px;width:340px;height:310px;color:var(--nevoa);opacity:.3}
 /* topo vinho */
 .topo-v{background:var(--vinho);color:var(--creme);min-height:min(100vh,900px);display:flex;flex-direction:column;justify-content:flex-end;padding:150px max(6vw,20px) 0}
 .topo-v .simb{position:absolute;right:-7vw;top:6vh;width:min(58vw,760px);height:auto;color:var(--creme);animation:respira 9s ease-in-out infinite alternate}
