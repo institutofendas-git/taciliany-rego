@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taciliany Rêgo — Psicóloga</title>
+<meta name="description" content="Psicoterapia online para mulheres adultas que não se reconhecem no roteiro. Taciliany Rêgo, psicóloga, CRP 11/18345.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE: liberdade vivida por dentro; calma, firme, um pouco irreverente. Muito vazio.
+IDEA: as pranchas da identidade — campos chapados de cor com um recorte grande saindo pela borda, como o post "No seu próprio ritmo".
+PICTURE: o símbolo creme gigante no topo vinho; gestos recortados em cada seção; o panorama como faixa.
+COLOUR and TYPE: kit — vinho #3F1521, creme #F0EDE5, azul névoa #94B2C4, azul profundo #0F2C42; Cormorant Garamond 400, Instrument Sans.
+LAYOUT: página única em pranchas alternadas; complemento em gavetas, monte de cartas e etiquetas penduradas.
+*/
+:root{color-scheme:light;--vinho:#3F1521;--creme:#F0EDE5;--nevoa:#94B2C4;--prof:#0F2C42;--tinta:#2A1A1F;--suave:#5E5156;--tom:#E8E3D8;--linha:#D6CEBF}
+*{box-sizing:border-box;min-width:0}
+html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--creme);color:var(--tinta);font:17px/1.65 "Instrument Sans",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;line-height:1.02;text-wrap:balance;margin:0;color:var(--vinho);letter-spacing:-.01em}
+h1 em,h2 em,h3 em{font-style:italic}
+h1{font-size:clamp(52px,7.6vw,112px)}h2{font-size:clamp(42px,5.6vw,76px)}
+p{margin:0 0 1em;max-width:58ch}
+a{color:inherit}
+.rot{font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 22px;opacity:.75}
+.band{position:relative;padding:clamp(100px,13vw,180px) max(6vw,20px);overflow:hidden}
+.wrap{position:relative;max-width:1200px;margin:0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;font:500 16px "Instrument Sans",sans-serif;text-decoration:none;border:1px solid currentColor;cursor:pointer;background:transparent;color:var(--vinho);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.cheio{background:var(--vinho);color:var(--creme);border-color:var(--vinho)}
+.btn.claro{background:var(--creme);color:var(--vinho);border-color:var(--creme)}
+.btn.vazado{color:var(--creme);border-color:#F0EDE599}
+:focus-visible{outline:2px solid var(--nevoa);outline-offset:3px}
+svg.ge{display:block}
+.risco{transition:opacity .8s ease}
+.risco.on{opacity:.55}
+/* menu */
+nav{position:fixed;top:14px;left:max(3vw,12px);right:max(3vw,12px);z-index:30;display:flex;align-items:center;gap:24px;padding:8px 8px 8px 22px;border-radius:999px;background:#F0EDE5f0;backdrop-filter:blur(10px);transition:box-shadow .3s}
+nav.sombra{box-shadow:0 10px 30px -18px #2A1A1F66}
+nav .marca img{height:34px;width:auto;display:block}
+nav .links{display:flex;gap:26px;margin-left:auto}
+nav .links a{font-size:15px;text-decoration:none;white-space:nowrap;padding:10px 0}
+nav .zap{min-height:44px;padding:0 22px;font-size:15px}
+.menu-btn{display:none;margin-left:auto;min-height:44px;padding:0 20px;border-radius:999px;border:0;background:var(--vinho);color:var(--creme);font:500 15px "Instrument Sans";cursor:pointer;align-items:center;gap:10px}
+.menu-btn i{display:inline-grid;gap:4px}.menu-btn i::before,.menu-btn i::after{content:"";width:16px;height:1.5px;background:currentColor;display:block}
+.menu{position:fixed;inset:0;z-index:50;background:var(--vinho);color:var(--creme);padding:22px max(6vw,22px) 40px;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .3s;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
+.menu.on{opacity:1;pointer-events:auto}
+.menu .topo{display:flex;justify-content:flex-end}
+.menu .x{width:48px;height:48px;border-radius:50%;border:1px solid #F0EDE570;background:none;color:inherit;font-size:24px;cursor:pointer}
+.menu ul{list-style:none;padding:0;margin:auto 0;position:relative;z-index:1}
+.menu li a{display:block;font:400 clamp(40px,10vw,58px)/1.12 "Cormorant Garamond",serif;text-decoration:none;padding:4px 0}
+.menu .btn{align-self:flex-start;position:relative;z-index:1}
+.menu .ge{position:absolute;right:-90px;top:-40px;width:340px;height:310px;color:var(--nevoa);opacity:.3}
+/* topo vinho */
+.topo-v{background:var(--vinho);color:var(--creme);min-height:min(100vh,900px);display:flex;flex-direction:column;justify-content:flex-end;padding:150px max(6vw,20px) 0}
+.topo-v .simb{position:absolute;right:-7vw;top:6vh;width:min(58vw,760px);height:auto;color:var(--creme);animation:respira 9s ease-in-out infinite alternate}
+@keyframes respira{from{transform:rotate(-2deg) translateY(0)}to{transform:rotate(2deg) translateY(-14px)}}
+.topo-v .wrap{width:100%;padding-bottom:clamp(60px,8vw,110px)}
+.topo-v h1{color:var(--creme);max-width:11ch}
+.topo-v .rot{color:var(--nevoa);opacity:1}
+.esperas{max-width:46ch;margin:34px 0 0;font:italic 400 clamp(21px,2vw,25px)/1.45 "Cormorant Garamond",serif;color:#F0EDE5d9}
+.esperas .resp{font-style:normal;color:var(--creme);opacity:0;transition:opacity 1s}
+.esperas .resp.ve{opacity:1}
+.topo-v .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.ticker{border-top:1px solid #F0EDE533;margin:0 calc(-1*max(6vw,20px));overflow:hidden;padding:18px 0}
+.trilho{display:flex;align-items:center;width:max-content;animation:corre 55s linear infinite}
+.ticker:hover .trilho,.temas:hover .trilho{animation-play-state:paused}
+.ticker span{display:inline-flex;align-items:center;gap:28px;font:italic 400 24px "Cormorant Garamond",serif;white-space:nowrap;padding-right:28px;color:#F0EDE5cc}
+.ticker svg{width:22px;height:22px;color:var(--nevoa)}
+@keyframes corre{to{transform:translateX(-50%)}}
+/* para quem */
+.duas{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,120px);align-items:start}
+.lista-nao{list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--linha)}
+.lista-nao li{padding:13px 0;border-bottom:1px solid var(--linha);font:400 23px/1.3 "Cormorant Garamond",serif;color:var(--vinho)}
+.lista-nao li{display:flex;align-items:baseline;gap:14px}
+.lista-nao .sem{flex:none;color:var(--suave);font:300 24px/1 "Instrument Sans",sans-serif}
+.temas{margin:clamp(90px,11vw,140px) calc(-1*max(6vw,20px)) 0;border-block:1px solid var(--linha);overflow:hidden;padding:26px 0}
+.temas .trilho{animation-duration:80s}
+.temas span{display:inline-flex;align-items:center;gap:24px;font:400 clamp(38px,5vw,66px)/1.1 "Cormorant Garamond",serif;white-space:nowrap;padding-right:24px;color:var(--vinho)}
+.temas svg{width:.72em;height:.72em;flex:none}
+.frase{text-align:center;margin-top:clamp(90px,11vw,140px)}
+.frase p{font:italic 400 clamp(34px,4.6vw,62px)/1.12 "Cormorant Garamond",serif;color:var(--vinho);max-width:19ch;margin:0 auto}
+.panorama{display:block;width:calc(100% + 2*max(6vw,20px));max-width:none;margin:60px calc(-1*max(6vw,20px)) calc(-1*clamp(100px,13vw,180px))}
+/* principios */
+.nevoa{background:var(--nevoa);color:var(--prof)}
+.nevoa h2{color:var(--prof)}
+.cab2{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.cab2 p{max-width:36ch;margin:0}
+.prin{list-style:none;margin:70px 0 0;padding:0;border-top:1px solid #0F2C4240}
+.prin li{display:grid;grid-template-columns:120px minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,4vw,56px);align-items:center;padding:30px 0;border-bottom:1px solid #0F2C4240}
+.prin svg{width:96px;height:96px;color:var(--vinho);transition:transform .8s ease}
+.prin li:hover svg{transform:rotate(-8deg) scale(1.08)}
+.prin h3{font-size:clamp(32px,3.4vw,46px);color:var(--vinho)}
+.prin p{margin:0;font-size:16.5px}
+.nevoa .ge.canto{position:absolute;left:-120px;bottom:-140px;width:420px;height:420px;color:#F0EDE559}
+/* o que esperar */
+.esp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;margin-top:64px;border-radius:28px;overflow:hidden}
+.lado{position:relative;padding:clamp(34px,5vw,64px);overflow:hidden;min-height:520px}
+.lado.sim{background:var(--tom)}
+.lado.nao{background:var(--vinho);color:var(--creme)}
+.lado h3{font-size:clamp(34px,3.4vw,46px);margin-bottom:26px}
+.lado.nao h3{color:var(--creme)}
+.lado ul{list-style:none;margin:0;padding:0;position:relative;z-index:1;max-width:40ch}
+.lado li{padding:13px 0;border-top:1px solid #2A1A1F1f;font-size:16.5px;line-height:1.5}
+.lado.nao li{border-color:#F0EDE526}
+.lado .ge{position:absolute;right:-70px;bottom:-80px;width:280px;height:280px}
+/* sobre */
+.sobre{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,7vw,120px);align-items:center}
+.foto-box{position:relative;max-width:420px}
+.foto{position:relative;border-radius:240px 240px 0 0;overflow:hidden;aspect-ratio:4/5;background:var(--vinho)}
+.foto img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15) brightness(1.15);mix-blend-mode:screen;opacity:.9;display:block}
+.foto small{position:absolute;left:16px;bottom:14px;font-size:12.5px;color:var(--creme);opacity:.8}
+.foto-box .ge{position:absolute;right:-70px;bottom:-50px;width:210px;height:210px;color:var(--nevoa)}
+.linha-tempo{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 14px}
+.linha-tempo button{min-height:44px;border:1px solid var(--linha);background:transparent;border-radius:999px;padding:0 18px;font:500 15px "Instrument Sans";color:var(--tinta);cursor:pointer}
+.linha-tempo button[aria-pressed=true]{background:var(--vinho);border-color:var(--vinho);color:var(--creme)}
+.detalhe{display:flex;flex-direction:column;justify-content:center;min-height:132px;background:var(--creme);border-radius:18px;padding:20px 26px}
+.detalhe b{font:400 28px/1.1 "Cormorant Garamond",serif;color:var(--vinho);margin-bottom:6px}
+.detalhe span{font-size:15.5px;line-height:1.5}
+/* atendimento */
+.prof{background:var(--prof);color:var(--creme)}
+.prof h2{color:var(--creme)}.prof .rot{color:var(--nevoa);opacity:1}
+.fio-scroll{margin:56px calc(-1*max(6vw,20px)) 0;overflow-x:auto;scrollbar-width:none;cursor:grab}
+.fio{position:relative;height:380px;min-width:1040px}
+.fio>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.tag{position:absolute;width:170px;transform-origin:50% calc(-1*var(--L));animation:balanca var(--d) ease-in-out infinite alternate}
+.tag::before{content:"";position:absolute;left:50%;bottom:100%;width:1px;height:var(--L);background:var(--nevoa)}
+.tag div{border-radius:22px;padding:24px 20px 20px;background:var(--creme);color:var(--prof)}
+.tag b{display:block;font:400 28px/1 "Cormorant Garamond",serif;color:var(--vinho);margin-bottom:10px}
+.tag span{font-size:14px;line-height:1.45;display:block}
+.tag.destaque div{background:var(--nevoa)}
+.tag.destaque b{color:var(--prof)}
+@keyframes balanca{from{transform:rotate(calc(var(--r) - 1.6deg))}to{transform:rotate(calc(var(--r) + 1.6deg))}}
+.dica{font-size:14px;display:none;margin-top:6px;opacity:.7}
+.valor{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between;margin-top:40px;border-top:1px solid #F0EDE526;padding-top:32px}
+.valor p{margin:0;max-width:56ch;font-size:16px;color:#F0EDE5d9}
+.prof .btn{color:var(--creme);border-color:#F0EDE599}
+/* manual */
+.deck{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,120px);align-items:center}
+.monte{position:relative;height:clamp(420px,40vw,480px);touch-action:pan-y;outline:none;user-select:none}
+.carta{position:absolute;inset:0;border-radius:4px;padding:clamp(30px,4vw,44px);display:flex;flex-direction:column;justify-content:space-between;background:var(--c1);color:var(--c2);box-shadow:0 30px 50px -34px #2A1A1F99;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s;overflow:hidden;will-change:transform}
+.carta[data-k="0"]{z-index:4;cursor:grab}
+.carta[data-k="1"]{z-index:3;transform:rotate(-3.5deg) translate(-12px,10px) scale(.97)}
+.carta[data-k="2"]{z-index:2;transform:rotate(3deg) translate(12px,8px) scale(.94)}
+.carta[data-k="x"]{z-index:1;transform:rotate(3deg) translate(12px,8px) scale(.94);opacity:0}
+.carta .n{font-size:12px;letter-spacing:.14em;opacity:.7}
+.carta h3{font-size:clamp(38px,4vw,54px);color:inherit;max-width:9ch;line-height:1}
+.carta p{margin:0;font-size:15.5px;max-width:24ch}
+.carta .ge{position:absolute;right:-60px;top:24%;width:250px;height:250px}
+.carta>*:not(.ge){position:relative}
+.ctl{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:30px;color:var(--suave);font-size:14px}
+.ctl button{width:44px;height:44px;border-radius:50%;border:1px solid var(--linha);background:none;color:var(--vinho);font-size:18px;cursor:pointer}
+/* duvidas */
+.tom{background:var(--tom)}
+.faq{max-width:880px;margin:56px auto 0}
+details{border-bottom:1px solid var(--linha)}
+summary{list-style:none;cursor:pointer;padding:24px 50px 24px 0;position:relative;font:400 27px/1.25 "Cormorant Garamond",serif;color:var(--vinho)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:20px;font:300 30px "Instrument Sans";transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--suave);font-size:16.5px}
+/* contato */
+.contato{background:var(--vinho);color:var(--creme);text-align:center;padding-bottom:0}
+.contato .logo{width:clamp(200px,24vw,270px);margin:0 auto 50px;display:block}
+.contato h2{color:var(--creme);max-width:15ch;margin:0 auto 40px}
+.contato .info{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 30px;margin-top:34px;font-size:16px;color:#F0EDE5cc}
+.contato .pano{display:block;width:calc(100% + 2*max(6vw,20px));max-width:none;margin:90px calc(-1*max(6vw,20px)) 0;opacity:.18}
+footer{padding:40px max(6vw,20px);font-size:14px;color:var(--suave);display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:space-between}
+footer p{margin:0;max-width:60ch}
+/* gaveta */
+.veu{position:fixed;inset:0;background:#2A1A1F66;opacity:0;pointer-events:none;transition:.3s;z-index:40}
+.gaveta{position:fixed;top:0;right:0;height:100%;height:100dvh;width:min(560px,100%);background:var(--creme);z-index:41;transform:translateX(102%);visibility:hidden;transition:transform .4s ease,visibility 0s .4s;overflow-y:auto;overscroll-behavior-y:contain;touch-action:pan-y;-webkit-overflow-scrolling:touch;padding:28px clamp(22px,4vw,48px) 48px}
+.aberta .veu{opacity:1;pointer-events:auto}
+.gaveta.on{transform:none;visibility:visible;transition:transform .4s ease}
+.fechar{position:sticky;top:0;margin-left:auto;display:flex;width:44px;height:44px;border-radius:50%;border:1px solid var(--linha);background:var(--creme);align-items:center;justify-content:center;font-size:22px;cursor:pointer;color:var(--tinta)}
+.gaveta h2{font-size:44px;margin:4px 0 24px}
+.gaveta p{font-size:16.5px}
+.gaveta .rot{color:var(--vinho)}
+.check{list-style:none;padding:0;margin:0}
+.check label{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--linha);cursor:pointer;font-size:16.5px;line-height:1.45}
+.check input{width:22px;height:22px;accent-color:#3F1521;flex:none;margin-top:2px}
+.check input:checked+span{color:var(--suave);text-decoration:line-through}
+.pronto{margin-top:18px;font:italic 400 26px "Cormorant Garamond";color:var(--vinho);min-height:1.5em}
+/* movimento ao longo da navegação */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1.1s ease,transform 1.2s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0)*110ms)}
+.rv.in{opacity:1;transform:none}
+.rv-o{opacity:0;transition:opacity 1.2s ease;transition-delay:calc(var(--i,0)*140ms)}
+.rv-o.in{opacity:1}
+.entra{opacity:0;animation:entra 1.3s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0s)}
+@keyframes entra{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.simb.entra{animation:entraSimb 1.8s cubic-bezier(.2,.7,.2,1) forwards,respira 9s ease-in-out 1.8s infinite alternate}
+@keyframes entraSimb{from{opacity:0;transform:rotate(-14deg) scale(.9)}to{opacity:1;transform:rotate(-2deg)}}
+.troca{animation:troca .6s ease}
+@keyframes troca{from{opacity:0;transform:translateY(8px)}}
+details[open] p{animation:troca .5s ease}
+nav{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+nav.some{transform:translateY(-130%)}
+[data-par]{will-change:translate}
+@media(max-width:1020px){
+ nav .links,nav .zap{display:none}.menu-btn{display:inline-flex}
+ .dica{display:block}
+}
+@media(max-width:860px){
+ .duas,.sobre,.deck,.esp{grid-template-columns:minmax(0,1fr)}
+ .topo-v{min-height:0;padding-top:120px}
+ .topo-v .simb{width:46vw;right:-15vw;top:200px}
+ .topo-v h1{font-size:min(11.5vw,64px);max-width:60%}
+ .topo-v .rot{max-width:22ch}
+ .prin li{grid-template-columns:64px minmax(0,1fr);gap:8px 20px;align-items:start}
+ .prin svg{width:58px;height:58px}
+ .prin p{grid-column:2}
+ .lado{min-height:0;padding-bottom:150px}
+ .lado .ge{width:200px;height:200px}
+ .foto-box{max-width:320px}
+ .foto-box .ge{width:150px;height:150px;right:-30px}
+ .fio{height:330px}
+}
+@media(max-width:600px){
+ body{font-size:16px}
+ nav .marca img{height:28px}
+ .detalhe{min-height:150px}
+ .carta .ge{width:190px;height:190px;right:-50px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv,.rv-o,.entra{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="g1" viewBox="0 0 204.0 207.0"><g transform="translate(20 20)" fill="currentColor"><path d="M0 0 C6.03 4.99 9 9.73 10.25 17.51 C11.08 28.27 6.97 38.31 0.46 46.76 C-1.81 49.33 -4.15 51.77 -6.57 54.2 C-7.06 54.7 -7.55 55.2 -8.06 55.72 C-12.4 60.12 -16.79 64.48 -21.23 68.78 C-26.84 74.58 -31.19 81.14 -31.7 89.36 C-31.34 101.7 -23.3 112.23 -15.57 121.2 C-14.06 123.07 -12.56 124.94 -11.07 126.82 C-10.4 127.66 -9.73 128.5 -9.04 129.36 C-8.55 129.97 -8.07 130.57 -7.57 131.2 C-8.23 131.53 -8.89 131.86 -9.57 132.2 C-11.87 131.18 -14.08 130.1 -16.32 128.95 C-25.82 124.25 -35.72 120.73 -45.7 117.23 C-71.01 108.24 -71.01 108.24 -75.68 100.31 C-77.28 96.51 -77.47 93.23 -76.57 89.2 C-73.22 83.09 -67.87 79.49 -61.84 76.31 C-61.19 75.96 -60.54 75.62 -59.88 75.27 C-52.27 71.37 -44.29 68.69 -36.19 66.01 C-14.85 58.9 -14.85 58.9 -10.57 55.2 C-9.75 53.18 -9.75 53.18 -9.57 51.2 C-12.39 47.2 -15.94 46.09 -20.57 45.2 C-36.14 43.63 -50.62 46.06 -65.57 50.2 C-66.66 50.5 -67.75 50.8 -68.88 51.11 C-75.28 52.87 -81.68 54.67 -88.05 56.52 C-101.97 60.27 -118.86 60.05 -131.68 53.04 C-133.38 51.95 -133.38 51.95 -135.57 50.2 C-132.17 49.07 -130.99 49.46 -127.57 50.2 C-112.33 51.26 -97.2 47.55 -85.29 37.58 C-82.27 34.9 -79.41 32.07 -76.57 29.2 C-75.81 28.47 -75.06 27.75 -74.29 27 C-71.08 23.87 -68.05 20.65 -65.13 17.26 C-49.35 -0.86 -22.97 -16.12 0 0 Z " transform="translate(145.56640625,23.80078125)" />
+</g></symbol><symbol id="g2" viewBox="0 0 160.0 209.0"><g transform="translate(20 20)" fill="currentColor"><path d="M0 0 C22.45 1.62 22.45 1.62 29 9 C30.43 11.68 31.02 13.96 31 17 C29.44 21.98 26.51 25.43 22 28 C13.83 31.33 5.78 32.68 -3 33 C-2.7 32.85 -2.7 32.85 -1.16 32.1 C1 31 1 31 3.62 29.38 C6 28 6 28 8 28 C10.24 23.29 10.62 18.94 9 14 C6.9 10.16 4.51 6.58 2 3 C1.34 2.01 0.68 1.02 0 0 Z " transform="translate(65,13)" />
+<path d="M0 0 C0.33 0 0.66 0 1 0 C2.12 14.53 -2.71 26.44 -8.54 39.41 C-13.97 51.54 -17.08 63.94 -13 77 C-9.6 84.83 -5.38 92.28 -1.16 99.7 C1.75 105.47 1.69 111.81 0 118 C-0.33 118 -0.66 118 -1 118 C-1.28 116.05 -1.52 114.09 -1.75 112.12 C-3.23 102.24 -6.65 95.86 -13.88 89.05 C-22.29 80.9 -28.05 72.48 -28.5 60.56 C-28 46.79 -20.51 36.53 -12.38 25.94 C-6.64 18.38 -3 11 -0.58 1.84 C-0.48 1.53 -0.48 1.53 0 0 Z " transform="translate(111,35)" />
+<path d="M0 0 C-0.58 0.33 -1.16 0.66 -1.76 1 C-9.09 5.46 -13.19 10.48 -16.38 18.44 C-17.88 26.99 -17.6 34.42 -13 42 C-10.77 44.65 -8.51 47.18 -6.06 49.63 C-0.47 55.26 2.56 60.76 3.38 68.62 C3.25 74.92 0.41 80.4 -3.83 84.97 C-9.91 90.44 -16.45 94.5 -23.56 98.5 C-24.67 99.13 -25.77 99.76 -26.91 100.41 C-29.6 101.95 -32.3 103.48 -35 105 C-35.33 104.34 -35.66 103.68 -36 103 C-35.17 100.72 -35.17 100.72 -33.83 97.86 C-33.35 96.82 -32.87 95.77 -32.38 94.7 C-31.86 93.58 -31.34 92.46 -30.81 91.31 C-22.9 73.77 -18.19 60.67 -25 42 C-25.73 40.45 -26.48 38.91 -27.25 37.38 C-29.97 31.44 -30.1 25.59 -28.19 19.36 C-23.65 9.08 -15.75 3.82 -5.6 -0.29 C-3 -1 -3 -1 0 0 Z " transform="translate(47,50)" />
+</g></symbol><symbol id="g3" viewBox="0 0 171.0 197.0"><g transform="translate(20 20)" fill="currentColor"><path d="M0 0 C-0.5 11.99 -1.13 23.09 -10 32 C-14.6 35.37 -19.06 37.13 -24.75 37.13 C-25.69 37.13 -26.63 37.14 -27.6 37.14 C-28.57 37.13 -29.55 37.13 -30.56 37.12 C-31.51 37.13 -32.47 37.13 -33.45 37.14 C-38.95 37.13 -44.32 36.84 -49.79 36.24 C-60.97 35.04 -74.28 35.17 -83.75 41.94 C-86.3 44.02 -87.81 45.91 -89 49 C-88.93 53.62 -88.76 55.94 -86.06 59.69 C-74.68 68.28 -63.04 69.13 -49.19 69 C-30.99 68.83 -12.24 70.25 2 83 C6.75 88.36 9.39 92.34 9.27 99.56 C8.65 105.08 5.96 109.38 2.06 113.25 C-7.3 120.43 -19.62 120.61 -30.88 121.78 C-38.71 122.67 -45.05 124.15 -52 128 C-53.33 128.67 -54.66 129.34 -56 130 C-54.19 117.67 -43.25 107.87 -33.86 100.55 C-23.37 93.08 -13.04 86.28 0 85 C-15.74 81.59 -27.63 87.27 -40.67 95.58 C-51.65 102.54 -62.49 106.85 -75.62 104.54 C-85.86 101.82 -93.35 95.94 -99.18 87.23 C-103.77 79.24 -105.1 69.24 -102.82 60.34 C-98.22 47.24 -89.06 39.25 -77 33 C-70.49 30.15 -63.7 28.2 -56.89 26.2 C-39.94 21.18 -25.46 15.48 -10.96 5.32 C-3.34 0 -3.34 0 0 0 Z " transform="translate(114,13)" />
+</g></symbol><symbol id="g4" viewBox="0 0 205.0 197.0"><g transform="translate(20 20)" fill="currentColor"><path d="M0 0 C0 0.33 0 0.66 0 1 C-2.11 1.32 -4.23 1.63 -6.35 1.9 C-28.54 4.77 -47.47 13.25 -65 27 C-65.53 27.42 -66.06 27.83 -66.61 28.26 C-84.33 42.3 -104.62 60.31 -111.06 82.69 C-110.98 87.22 -110.26 91.03 -108 95 C-103.28 99.16 -97.78 100.1 -91.7 100.18 C-71.47 100.58 -54.21 102.41 -38.46 116.39 C-37 118 -37 118 -36 121 C-42 119 -42 119 -43.98 118.23 C-62.07 111.51 -79.51 117.44 -97 123 C-99.48 123.78 -101.96 124.54 -104.44 125.31 C-104.92 125.47 -104.92 125.47 -107.37 126.24 C-116.71 128.95 -126.78 129.53 -135.77 125.4 C-140.61 122.36 -143.81 118.27 -146.44 113.25 C-148.63 100.58 -145.95 90.56 -138.69 80.12 C-136.85 77.52 -135 74.95 -133.08 72.42 C-128.2 65.85 -123.4 58.13 -123.94 49.62 C-125.19 45.35 -126.46 43.68 -130 41 C-136.84 37.58 -145.7 38.42 -153 40 C-150.59 30.6 -143.82 21.47 -135.47 16.49 C-127.74 12.52 -120.58 10.58 -111.86 12.46 C-108.51 13.66 -107.13 14.78 -105.38 17.88 C-104.9 21.81 -105.76 22.8 -108 26 C-110.27 28.36 -112.64 30.58 -115.04 32.82 C-117 35 -117.74 36.12 -118 39 C-117.06 40.75 -117.06 40.75 -115 42 C-96.4 43.14 -79.11 28.71 -65.37 17.67 C-47.51 3.39 -23.17 -10.52 0 0 Z " transform="translate(162,15)" />
+</g></symbol><symbol id="g5" viewBox="0 0 210.0 177.0"><g transform="translate(20 20)" fill="currentColor"><path d="M0 0 C4.85 2.99 8.99 6.83 13.23 10.61 C24.38 20.53 38.83 30.58 54.5 30.03 C59.4 29.2 64.05 27.39 68.69 25.66 C67.44 34.16 62.18 40.93 55.5 46.09 C44.17 53.6 32.68 55.3 19.32 53.1 C9.61 50.79 0.46 46.89 -8.8 43.24 C-24.76 37.04 -38.91 33.93 -55.24 40.91 C-66.62 46.7 -72.28 54.65 -78.31 65.66 C-78.97 66.65 -79.63 67.64 -80.31 68.66 C-81.48 56.07 -74.72 42.7 -67.24 32.97 C-65.02 30.42 -62.72 28.03 -60.31 25.66 C-59.9 25.25 -59.9 25.25 -57.82 23.2 C-43.06 9.28 -21.5 -9.66 0 0 Z " transform="translate(87.30859375,16.34375)" />
+<path d="M0 0 C0.33 0.66 0.66 1.32 1 2 C-4.13 11.64 -12.62 20.26 -23 24 C-25.8 24.85 -28.62 25.64 -31.44 26.44 C-46.46 30.7 -55.57 39 -65.84 50.64 C-73.2 58.7 -79.98 63.27 -91.09 64.02 C-97.25 63.99 -103.35 63.33 -109.46 62.59 C-115.68 61.91 -120.69 62.28 -126.74 63.94 C-127.49 63.96 -128.23 63.98 -129 64 C-134.05 58 -134.42 47.95 -133.78 40.43 C-132 29.49 -126.69 20.85 -118 14 C-101.34 3.77 -85.39 4.72 -67 9 C-45.33 13.98 -26.7 17.9 -6.59 5.82 C-4.1 4.07 -2.07 2.22 0 0 Z " transform="translate(147,60)" />
+</g></symbol><symbol id="simbolo" viewBox="0 0 455.0 415.0"><g transform="translate(30 30)" fill="currentColor"><path d="M0 0 C0.92 0.01 1.83 0.02 2.77 0.02 C15.42 0.33 28.91 4.39 38.19 13.44 C38.68 14.43 39.18 15.42 39.69 16.44 C36.42 21.15 32.47 24.45 27.88 27.81 C27.2 28.32 26.52 28.82 25.82 29.34 C19.59 33.91 13.14 38.14 6.69 42.38 C-3.16 48.85 -12.42 55.71 -21.31 63.44 C-22.27 64.27 -23.24 65.1 -24.23 65.96 C-26.63 68.08 -28.98 70.25 -31.31 72.44 C-31.96 73.02 -32.61 73.6 -33.27 74.2 C-43.31 83.62 -51.13 95.38 -57.59 107.45 C-59.27 110.37 -61.14 112.87 -63.31 115.44 C-70.5 85.9 -63.95 54.7 -49.31 28.44 C-47.2 25.18 -44.97 22.26 -42.31 19.44 C-41.49 18.55 -40.66 17.66 -39.81 16.75 C-38.99 15.99 -38.16 15.22 -37.31 14.44 C-36.81 13.96 -36.31 13.48 -35.8 12.98 C-25.93 3.9 -13.25 -0.16 0 0 Z " transform="translate(137.3125,14.5625)" />
+<path d="M0 0 C22.63 -0.77 47.23 6.3 65.87 19.12 C67.24 20.41 68.59 21.74 69.87 23.12 C68.86 23.19 67.84 23.27 66.79 23.34 C52.3 24.63 42.04 29.13 32.28 40.38 C28.5 45.03 25.17 50.02 21.77 54.96 C10.38 71.42 -3.4 83.53 -23.46 87.61 C-46.82 90.86 -69.44 83.6 -91.87 77.89 C-135.44 66.82 -135.44 66.82 -148.13 74.12 C-150 76.43 -150 76.43 -150.13 79.12 C-146.6 84.15 -142.78 86.85 -137.5 89.87 C-130.19 94.23 -124.18 99.09 -118.13 105.12 C-117.27 105.97 -116.41 106.83 -115.52 107.71 C-114.73 108.5 -113.94 109.3 -113.13 110.12 C-112.59 110.65 -112.05 111.18 -111.5 111.72 C-86.97 137.72 -74.24 181.26 -74.13 216.12 C-75.38 213.63 -76.61 211.12 -77.83 208.61 C-79.87 204.42 -81.98 200.26 -84.13 196.12 C-84.63 195.15 -85.13 194.18 -85.65 193.18 C-98.63 170.69 -122.88 156.46 -145.27 144.95 C-167.68 133.43 -167.68 133.43 -176.13 127.12 C-176.72 126.71 -177.31 126.3 -177.92 125.88 C-185.06 120.57 -190.1 112.11 -191.88 103.49 C-192.99 92.11 -188.48 83.9 -181.61 75.19 C-168.73 61 -148.54 54.5 -130.68 49.35 C-105.41 42.02 -82.85 32.03 -59.93 19.07 C-40.78 8.26 -22.14 1.22 0 0 Z " transform="translate(303.12890625,18.8828125)" />
+<path d="M0 0 C3.05 1.52 3.19 3.85 4.31 7 C15.81 37.6 42.76 51.43 70.28 65.46 C88.39 74.7 106.41 84.18 123 96 C124.04 96.73 125.08 97.47 126.15 98.23 C148.6 114.56 164.82 133.3 169.56 161.24 C171.47 177.62 170.63 199.9 161 214 C157.23 212.74 156.39 211.2 154 208.06 C137.21 187.21 112.93 174.49 87.94 166 C87.12 165.72 86.3 165.44 85.45 165.16 C74.98 161.79 64.65 160.65 53.69 160.75 C52.59 160.75 51.48 160.76 50.35 160.76 C44.71 160.82 39.27 161.09 33.69 162 C16.74 164.66 -1.73 164.81 -18 159 C-19.05 158.65 -20.09 158.3 -21.17 157.94 C-36.45 152.24 -48.8 142.04 -55.75 127.18 C-62.17 110.87 -60.74 94.91 -53.94 79 C-48.12 66.09 -39.65 55.28 -30.43 44.66 C-22.99 36.03 -16.22 27.11 -10 17.56 C-9.46 16.73 -8.92 15.91 -8.36 15.05 C-5.24 10.17 -2.5 5.24 0 0 Z " transform="translate(73,133)" />
+</g></symbol></svg>
+<nav aria-label="Principal" id="nav">
+  <a class="marca" href="#inicio" aria-label="Taciliany Rêgo, início"><img src="logo-horizontal-vinho.svg" alt="Taciliany Rêgo"></a>
+  <div class="links">
+    <a href="#para-quem">Para quem</a><a href="#como-trabalho">Como trabalho</a><a href="#sobre">Sobre mim</a><a href="#atendimento">Atendimento</a><a href="#manual">Manual</a><a href="#duvidas">Dúvidas</a>
+  </div>
+  <a class="btn cheio zap" href="https://wa.me/5585999558473" target="_blank" rel="noopener">WhatsApp</a>
+  <button class="menu-btn" id="abre-menu" aria-expanded="false" aria-controls="menu"><i></i>Menu</button>
+</nav>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="topo"><button class="x" id="fecha-menu" aria-label="Fechar menu">×</button></div>
+  <ul>
+    <li><a href="#para-quem">Para quem</a></li>
+    <li><a href="#como-trabalho">Como trabalho</a></li>
+    <li><a href="#sobre">Sobre mim</a></li>
+    <li><a href="#atendimento">Atendimento</a></li>
+    <li><a href="#manual">Manual da terapia</a></li>
+    <li><a href="#duvidas">Dúvidas</a></li>
+  </ul>
+  <a class="btn claro" href="https://wa.me/5585999558473" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+  <svg class="ge" aria-hidden="true"><use href="#simbolo"/></svg>
+</div>
+
+<header id="inicio" class="band topo-v">
+  <svg class="ge simb entra" data-par=".35" data-rot="5" viewBox="0 0 455 415" aria-hidden="true"><use href="#simbolo"/></svg>
+  <div class="wrap">
+    <p class="rot entra" style="--d:.2s">Psicoterapia online para mulheres adultas</p>
+    <h1 class="entra" style="--d:.35s">Para mulheres que não se reconhecem <em>no roteiro.</em></h1>
+    <p class="esperas entra" style="--d:.6s" id="esperas"><span class="risco">Ser agradável.</span> <span class="risco">Cuidar de todo mundo.</span> <span class="risco">Organizar a vida em torno de um relacionamento.</span> <span class="risco">Querer ser mãe.</span> <span class="risco">Desejar o que esperam que você deseje.</span> <span class="resp" id="resp">E o que você quer?</span></p>
+    <div class="acoes entra" style="--d:.8s">
+      <a class="btn claro" href="https://wa.me/5585999558473" target="_blank" rel="noopener">Fale comigo</a>
+      <a class="btn vazado" href="#atendimento">Conheça o atendimento</a>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true"><div class="trilho" id="ticker"></div></div>
+</header>
+
+<section id="para-quem" class="band">
+  <div class="wrap duas">
+    <div>
+      <p class="rot" style="color:var(--vinho)">Para quem é</p>
+      <h2>Talvez o que pese seja o <em>esforço de corresponder.</em></h2>
+    </div>
+    <div>
+      <p>Atendo mulheres que questionam padrões de feminilidade, recusam papéis que parecem obrigatórios, organizam afetos e projetos de outro jeito, ou só sentem que não cabem no roteiro que receberam.</p>
+      <p style="margin-top:28px">Para começar, você não precisa de:</p>
+      <ul class="lista-nao">
+        <li><span class="sem" aria-hidden="true">×</span><span>um diagnóstico</span></li><li><span class="sem" aria-hidden="true">×</span><span>saber nomear o que sente</span></li><li><span class="sem" aria-hidden="true">×</span><span>um motivo "grave o bastante"</span></li><li><span class="sem" aria-hidden="true">×</span><span>se definir como feminista, não materna ou qualquer outra coisa</span></li><li><span class="sem" aria-hidden="true">×</span><span>chegar ao limite</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="temas" aria-label="Questões que podem atravessar sua experiência"><div class="trilho" id="temas"></div></div>
+  <div class="frase"><p>Não existe uma forma certa de ser uma mulher fora dos padrões.</p></div>
+  <img class="panorama" data-parx=".5" src="panorama.svg" alt="" loading="lazy">
+</section>
+
+<section id="como-trabalho" class="band nevoa">
+  <svg class="ge canto" data-par=".5" data-rot="10" aria-hidden="true"><use href="#simbolo"/></svg>
+  <div class="wrap">
+    <div class="cab2">
+      <div><p class="rot">Como eu trabalho</p><h2>Compreender <em>antes de concluir.</em></h2></div>
+      <p>Cada pessoa chega com uma história, um contexto e questões que merecem ser compreendidas na sua singularidade.</p>
+    </div>
+    <ul class="prin" id="principios"></ul>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="esp-t">
+  <div class="wrap">
+    <p class="rot" style="color:var(--vinho)">O que esperar</p>
+    <h2 id="esp-t">A terapia é um trabalho. <em>Não uma prova.</em></h2>
+    <div class="esp">
+      <div class="lado sim"><h3>O que a terapia é</h3><ul id="sim"></ul><svg class="ge" data-par=".4" data-rot="8" style="color:var(--nevoa)" aria-hidden="true"><use href="#g2"/></svg></div>
+      <div class="lado nao"><h3>O que ela <em>não</em> é</h3><ul id="nao"></ul><svg class="ge" data-par=".4" data-rot="-8" style="color:#F0EDE52e" aria-hidden="true"><use href="#g4"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="band tom">
+  <div class="wrap sobre">
+    <div class="foto-box">
+      <div class="foto"><img src="taciliany-provisoria.jpg" alt="Taciliany Rêgo"><small>foto provisória</small></div>
+      <svg class="ge" data-par=".45" data-rot="12" aria-hidden="true"><use href="#g1"/></svg>
+    </div>
+    <div>
+      <p class="rot" style="color:var(--vinho)">Sobre mim · CRP 11/18345</p>
+      <h2>Taciliany <em>Kedelh Gomes Rêgo</em></h2>
+      <p style="margin-top:24px">Psicóloga desde 2021. Passei pela clínica, pela escola, pelo plantão psicológico e por três anos de CAPS no interior do Ceará. Foi ali que aprendi que sofrimento não se entende só por dentro: história, trabalho, acesso a direitos e desigualdade também contam.</p>
+      <div class="linha-tempo" role="group" aria-label="Trajetória" id="trajeto"></div>
+      <div class="detalhe" id="trajeto-txt" aria-live="polite"></div>
+      <button class="btn" data-gaveta="g-sobre" style="margin-top:22px">Ler a apresentação completa</button>
+    </div>
+  </div>
+</section>
+
+<section id="atendimento" class="band prof">
+  <div class="wrap">
+    <div class="cab2">
+      <div><p class="rot">Atendimento</p><h2>Como <em>funciona</em></h2></div>
+      <p style="color:#F0EDE5cc">Individual, só online, para mulheres a partir de 18 anos. Não atendo crianças, adolescentes nem presencialmente.</p>
+    </div>
+  </div>
+  <div class="fio-scroll" id="fio-scroll"><div class="fio" id="fio"></div></div>
+  <div class="wrap">
+    <p class="dica">← arraste para ver todas →</p>
+    <div class="valor">
+      <p><b style="color:var(--creme)">Valor da sessão:</b> informo no primeiro contato, junto com as dúvidas sobre o funcionamento. Prefiro conversar com cada pessoa a anunciar preço.</p>
+      <button class="btn" data-gaveta="g-ambiente">Como preparar o ambiente</button>
+    </div>
+  </div>
+</section>
+
+<section id="manual" class="band">
+  <div class="wrap deck">
+    <div>
+      <p class="rot" style="color:var(--vinho)">Manual da terapia</p>
+      <h2>Coisas que talvez <em>ninguém tenha te dito.</em></h2>
+      <p style="margin-top:24px">Não existe uma maneira perfeita de fazer terapia. Arraste as cartas para o lado: para a esquerda passa, para a direita volta.</p>
+    </div>
+    <div>
+      <div class="monte" id="monte" tabindex="0" aria-label="Cartas do manual. Use as setas do teclado para passar." aria-live="polite"></div>
+      <div class="ctl"><button id="ant" aria-label="Carta anterior">←</button><span id="conta"></span><button id="prox" aria-label="Próxima carta">→</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="duvidas" class="band tom">
+  <div class="wrap">
+    <p class="rot" style="text-align:center;color:var(--vinho)">Dúvidas frequentes</p>
+    <h2 style="text-align:center">Antes de <em>marcar</em></h2>
+    <div class="faq" id="faq"></div>
+  </div>
+</section>
+
+<section id="contato" class="band contato">
+  <img class="logo" src="logo-principal-creme.svg" alt="Taciliany Rêgo, psicóloga, CRP 11/18345">
+  <h2>Você não precisa chegar pronta. <em>Podemos começar de onde for possível.</em></h2>
+  <a class="btn claro" href="https://wa.me/5585999558473" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+  <div class="info"><span>(85) 99955-8473</span><span>taciliany.psi@gmail.com</span><a href="https://instagram.com/tacy.psi" target="_blank" rel="noopener">@tacy.psi</a></div>
+  <img class="pano" data-parx="-.4" src="panorama-creme.svg" alt="" loading="lazy">
+</section>
+
+<footer>
+  <p><b>Taciliany Kedelh Gomes Rêgo</b> · Psicóloga · CRP 11/18345<br>Atendimento psicológico online para mulheres adultas.</p>
+  <p>Este site é informativo e não substitui atendimento psicológico, avaliação individual ou serviço de emergência. Em risco imediato: SAMU 192 ou CVV 188.</p>
+</footer>
+
+<div class="veu" id="veu"></div>
+<aside class="gaveta" role="dialog" aria-modal="true" tabindex="-1" id="g-sobre" aria-label="Apresentação completa" aria-hidden="true">
+  <button class="fechar" aria-label="Fechar">×</button>
+  <p class="rot">Sobre mim</p>
+  <h2>Apresentação <em>completa</em></h2>
+  <p>Sou psicóloga desde 2021. Durante a formação, participei da extensão do LAPFES-UFC (Psicoterapia, Fenomenologia e Sociedade), com estudos, ensino e plantão psicológico. Depois fiz especialização em Neuropsicologia na Unifor.</p>
+  <p>Trabalhei com Psicologia Escolar, plantão psicológico e saúde mental, incluindo três anos de CAPS no interior do Ceará. Essas experiências me aproximaram de formas de sofrimento que não se explicam só por características individuais.</p>
+  <p>Hoje atendo na clínica individual, online, e faço plantão psicológico em contexto organizacional.</p>
+  <p>Na clínica, valorizo a escuta, o estudo contínuo e o pensamento crítico. Me interessa como as expectativas sociais atravessam a vida de cada mulher, sem supor que todas vivam isso do mesmo jeito. Não acredito em respostas universais nem em fórmulas para experiências complexas.</p>
+  <p>Também não parto da ideia de que questionar normas seja, por si só, um problema psicológico. A proposta não é te adaptar a outro modelo de vida, e sim abrir espaço para entender o que faz sentido, o que produz sofrimento e o que dá para construir a partir da sua realidade.</p>
+</aside>
+<aside class="gaveta" role="dialog" aria-modal="true" tabindex="-1" id="g-ambiente" aria-label="Como preparar o ambiente" aria-hidden="true">
+  <button class="fechar" aria-label="Fechar">×</button>
+  <p class="rot">Antes da sessão</p>
+  <h2>Preparando <em>o ambiente</em></h2>
+  <p>A privacidade do encontro depende das duas partes. Vá marcando:</p>
+  <ul class="check" id="check"></ul>
+  <p class="pronto" id="pronto" aria-live="polite"></p>
+</aside>
+
+<script>
+{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const ge=(n,cor,cls='')=>`<svg class="ge ${cls}" style="color:${cor}" aria-hidden="true"><use href="#g${n}"/></svg>`;
+
+const tk=["Você não precisa chegar pronta","Pode falar palavrão","Pode ficar em silêncio","Pode discordar de mim","Pode rir de coisas difíceis","Não precisa contar tudo de uma vez"];
+const t1=tk.map((t,i)=>`<span>${t}${ge(i%5+1,'#94B2C4')}</span>`).join('');$('#ticker').innerHTML=t1+t1;
+
+const temas=["Feminilidade","Corpo","Maternidade","Amor","Família","Amizade","Trabalho","Cuidado","Culpa","Autonomia","Pertencimento","Desejo","Identidade"];
+const tm=temas.map((t,i)=>`<span>${t}${ge(i%5+1,i%2?'#94B2C4':'#3F1521')}</span>`).join('');$('#temas').innerHTML=tm+tm;
+
+const princ=[["Escuta <em>cuidadosa</em>","Entender antes de concluir, respeitando a complexidade do que você traz."],["Pensamento <em>crítico</em>","Considerar o social, o cultural, o econômico e as relações que atravessam a vida."],["Construção <em>conjunta</em>","Você participa ativamente do processo, no seu ritmo."],["Estudo <em>e ética</em>","Formação contínua, reflexão e compromisso com o cuidado."],["Singula<em>ridade</em>","Nada de encaixar pessoas em explicações prontas."]];
+$('#principios').innerHTML=princ.map((p,i)=>`<li>${ge(i+1,'#3F1521')}<h3>${p[0]}</h3><p>${p[1]}</p></li>`).join('');
+
+const sim=["Um espaço de trabalho: olhar o que se repete, o que dói e as relações que você constrói.","Um processo com ritmo próprio. Algumas questões só ganham nome com o tempo.","Um lugar onde você pode discordar, perguntar e dizer quando algo não fez sentido.","Uma forma de ampliar a compreensão e construir outras possibilidades."];
+const nao=["Uma conversa entre amigas, mesmo com proximidade e confiança.","Um lugar para receber ordens, conselhos universais ou decisões prontas.","Uma avaliação moral sobre quem você é ou o que escolheu.","Uma competição para provar quem sofre mais.","Uma promessa de nunca mais sentir tristeza, medo, raiva ou conflito."];
+$('#sim').innerHTML=sim.map(t=>`<li>${t}</li>`).join('');$('#nao').innerHTML=nao.map(t=>`<li>${t}</li>`).join('');
+
+const traj=[["Formação","Psicologia","Graduação concluída em 2021, já com estudos, ensino e plantão psicológico durante o curso."],["LAPFES-UFC","Extensão","Psicoterapia, Fenomenologia e Sociedade: grupo de estudos, ensino e plantão psicológico."],["Neuropsicologia","Especialização","Especialização em Neuropsicologia pela Unifor, depois da graduação em Psicologia."],["CAPS","Saúde mental","Três anos num CAPS do interior do Ceará, perto de realidades que não cabem só no individual."],["Escola e plantão","Psicologia Escolar","Trabalho em escola e em plantão psicológico, com escuta pontual e muitas realidades diferentes."],["Hoje","Clínica online","Atendimento individual online e plantão psicológico em contexto organizacional."]];
+$('#trajeto').innerHTML=traj.map((t,i)=>`<button data-i="${i}">${t[0]}</button>`).join('');
+const pintaT=i=>{const d=$('#trajeto-txt');d.classList.remove('troca');void d.offsetWidth;d.classList.add('troca');d.innerHTML=`<b>${traj[i][1]}</b><span>${traj[i][2]}</span>`;$$('#trajeto button').forEach((b,j)=>b.setAttribute('aria-pressed',i===j))};
+$$('#trajeto button').forEach(b=>b.onclick=()=>pintaT(+b.dataset.i));pintaT(5);
+
+/* etiquetas penduradas num fio fino */
+const tags=[["Online","Pelo Google Meet. O link chega antes de cada sessão.",0],["Semanal","Mesmo dia e horário toda semana.",0],["50 minutos","Duração média de cada encontro.",0],["Câmera ligada","O olhar e as expressões também fazem parte da conversa.",0],["Pix","Antes da sessão, com o comprovante pelo WhatsApp.",0],["Valor social","Para mulheres com renda individual de até dois salários mínimos, conforme disponibilidade.",1]];
+const y0=40,yc=150,y1=30,yAt=t=>(1-t)**2*y0+2*(1-t)*t*yc+t*t*y1,L=[30,58,40,66,34,52];
+$('#fio').innerHTML=`<svg viewBox="0 0 1000 380" preserveAspectRatio="none" aria-hidden="true"><path d="M-30 ${y0+6} Q500 ${yc} 1030 ${y1}" fill="none" stroke="#94B2C4" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>`+
+tags.map((p,i)=>{const t=.08+i*.168,r=[-2,1.5,-1,2,-1.5,1][i];return `<div class="tag${p[2]?' destaque':''}" style="left:calc(${t*100}% - 85px);top:${yAt(t)+L[i]}px;--L:${L[i]}px;--r:${r}deg;--d:${4.2+i*.6}s"><div><b>${p[0]}</b><span>${p[1]}</span></div></div>`}).join('');
+{const s=$('#fio-scroll');let x0=null,sl=0;s.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;x0=e.clientX;sl=s.scrollLeft});addEventListener('pointermove',e=>{if(x0!==null)s.scrollLeft=sl-(e.clientX-x0)});addEventListener('pointerup',()=>x0=null)}
+
+/* monte de cartas: elementos fixos, só a posição muda */
+const cartas=[["Pode falar palavrão.","A sessão não é entrevista de emprego. O importante é dizer o que você quer dizer."],["Não precisa saber por onde começar.","Começamos pelo que estiver mais perto naquele dia."],["Pode ficar em silêncio.","Às vezes é preciso tempo para achar as palavras."],["Pode chorar. Ou não.","Chorar não é requisito para uma sessão ser importante."],["Pode discordar de mim.","Terapia não é obediência. Pode questionar e pedir explicação."],["Não precisa de uma descoberta por semana.","O processo não anda em linha reta."],["Pode falar do que dá vergonha.","Sem preparar uma versão mais aceitável de si mesma."],["Sua dor não precisa ser comparada.","Você não tem que provar que sofre o suficiente."],["Pode rir de coisas difíceis.","Rir não quer dizer que não importa."],["Não precisa contar tudo de uma vez.","Confiança leva tempo. Você escolhe o que dividir."],["Pode perguntar por que eu perguntei.","Você tem direito de entender o trabalho que está sendo feito."],["Pode dizer que está insatisfeita.","Se algo não estiver funcionando, isso também é assunto da sessão."],["A vida continua fora da terapia.","O processo também acontece nas relações e escolhas do dia a dia."]];
+const est=[["#3F1521","#F0EDE5","#F0EDE5"],["#94B2C4","#0F2C42","#3F1521"],["#E8E3D8","#3F1521","#94B2C4"],["#0F2C42","#F0EDE5","#94B2C4"]];
+const N=cartas.length,M=$('#monte');let ci=0,ocup=false;
+M.innerHTML=cartas.map((c,j)=>{const e=est[j%4];return `<div class="carta" style="--c1:${e[0]};--c2:${e[1]}">${ge(j%5+1,e[2])}<span class="n">${String(j+1).padStart(2,'0')} / ${N}</span><h3>${c[0]}</h3><p>${c[1]}</p></div>`}).join('');
+const els=[...M.children];
+const pos=()=>{els.forEach((el,j)=>{const k=(j-ci+N)%N;el.dataset.k=k<3?k:'x';el.setAttribute('aria-hidden',k?'true':'false')});$('#conta').textContent=`${ci+1} de ${N}`};
+const proxima=()=>{if(ocup)return;ocup=true;const top=els[ci];top.style.transform='translateX(-125%) rotate(-12deg)';top.style.opacity='0';ci=(ci+1)%N;pos();
+ setTimeout(()=>{top.style.transition='none';top.style.transform='';top.style.opacity='';void top.offsetWidth;top.style.transition='';ocup=false},520)};
+const anterior=()=>{if(ocup)return;ocup=true;ci=(ci-1+N)%N;const el=els[ci];el.style.transition='none';el.style.transform='translateX(125%) rotate(12deg)';el.style.opacity='0';pos();void el.offsetWidth;el.style.transition='';el.style.transform='';el.style.opacity='';setTimeout(()=>ocup=false,520)};
+{let x0=null,dx=0,top=null;
+ M.addEventListener('pointerdown',e=>{if(ocup)return;top=els[ci];x0=e.clientX;dx=0;M.setPointerCapture(e.pointerId);top.style.transition='none'});
+ M.addEventListener('pointermove',e=>{if(x0===null)return;dx=e.clientX-x0;top.style.transform=`translateX(${dx}px) rotate(${dx/18}deg)`});
+ const solta=()=>{if(x0===null)return;x0=null;top.style.transition='';if(dx<-70)proxima();else{top.style.transform='';if(dx>70)anterior()}};
+ M.addEventListener('pointerup',solta);M.addEventListener('pointercancel',solta)}
+$('#prox').onclick=proxima;$('#ant').onclick=anterior;
+M.addEventListener('keydown',e=>{if(e.key==='ArrowRight')proxima();if(e.key==='ArrowLeft')anterior()});
+pos();
+
+const faq=[["Preciso de um diagnóstico para começar?","Não. Algumas pessoas chegam com diagnóstico ou encaminhamento; outras, porque percebem sofrimento, conflitos que se repetem ou mudanças importantes. A compreensão clínica se constrói com cuidado, sem reduzir ninguém a um rótulo."],["Como funciona a sessão online?","Pelo Google Meet, no horário combinado. Você recebe o link e entra no horário marcado, de um lugar reservado e com internet estável. Não precisa entrar antes."],["Posso fazer pelo celular?","Pode, se a chamada ficar estável, com áudio e vídeo bons, e você conseguir ficar num lugar privado durante toda a sessão."],["Preciso deixar a câmera ligada?","Sim. No atendimento por vídeo, o contato visual e as expressões fazem parte da comunicação e do vínculo."],["Qual é o valor?","Informo no primeiro contato pelo WhatsApp, junto com as outras dúvidas. Há valor social para mulheres com renda individual de até dois salários mínimos, conforme disponibilidade."],["E se eu precisar faltar?","O horário fica reservado para você toda semana. Avise assim que puder. Os combinados de faltas e reagendamentos são apresentados no início do acompanhamento."],["Posso mandar mensagem entre as sessões?","O WhatsApp é para assuntos práticos: link, comprovante, horário. Ele não funciona como atendimento contínuo nem tem resposta imediata."],["Você atende crise ou emergência?","O atendimento com horário marcado não é serviço de emergência. Em risco imediato, procure o SAMU (192), uma UPA ou o CVV (188, 24 horas)."],["Quanto tempo dura o processo?","Não há prazo igual para todo mundo. Depende das questões, das necessidades e do percurso. Não dá para prometer resultado nem prazo."],["Posso parar quando quiser?","A decisão é sua. Sempre que possível, vale conversar sobre isso em sessão, para encerrar o percurso com cuidado."]];
+$('#faq').innerHTML=faq.map(q=>`<details><summary>${q[0]}</summary><p>${q[1]}</p></details>`).join('');
+
+const amb=["Um cômodo reservado, com pouca circulação de gente.","Quem mora com você sabe o horário e não vai interromper.","Fone de ouvido, para ninguém escutar a conversa.","Luz voltada para você.","Celular ou computador apoiado numa posição firme.","Nada de transporte, rua ou volante.","Água por perto."];
+$('#check').innerHTML=amb.map((t,i)=>`<li><label><input type="checkbox" id="amb${i}"><span>${t}</span></label></li>`).join('');
+$('#check').onchange=()=>{$('#pronto').textContent=$$('#check input:checked').length===amb.length?'Pronto. Agora é só entrar no link.':''};
+
+let fundoY=null,focoAnterior=null;
+const travaFundo=()=>{if(fundoY!==null)return;fundoY=scrollY;Object.assign(document.body.style,{position:'fixed',top:`-${fundoY}px`,left:'0',right:'0',width:'100%'});$('#nav').classList.remove('some')};
+const liberaFundo=()=>{if(fundoY===null)return;const y=fundoY;fundoY=null;['position','top','left','right','width'].forEach(k=>document.body.style[k]='');const html=document.documentElement,antes=html.style.scrollBehavior;html.style.scrollBehavior='auto';window.scrollTo(0,y);html.style.scrollBehavior=antes};
+const abre=id=>{focoAnterior=document.activeElement;travaFundo();document.body.classList.add('aberta');const g=document.getElementById(id);g.inert=false;g.classList.add('on');g.setAttribute('aria-hidden','false');g.querySelector('.fechar').focus({preventScroll:true})};
+const fecha=()=>{document.body.classList.remove('aberta');$$('.gaveta').forEach(g=>{g.inert=true;g.classList.remove('on');g.setAttribute('aria-hidden','true')});if(!document.getElementById('menu').classList.contains('on'))liberaFundo();if(focoAnterior){focoAnterior.focus({preventScroll:true});focoAnterior=null}};
+$$('.gaveta').forEach(g=>g.inert=true);
+$$('[data-gaveta]').forEach(b=>b.onclick=()=>abre(b.dataset.gaveta));
+$$('.fechar').forEach(b=>b.onclick=fecha);$('#veu').onclick=fecha;
+
+const menu=$('#menu'),mb=$('#abre-menu');
+const menuOn=v=>{menu.classList.toggle('on',v);mb.setAttribute('aria-expanded',v);menu.setAttribute('aria-hidden',!v);menu.inert=!v;if(v){travaFundo();$('#fecha-menu').focus({preventScroll:true})}else{if(!document.body.classList.contains('aberta'))liberaFundo();mb.focus({preventScroll:true})}};
+menu.inert=true;menu.setAttribute('aria-hidden','true');
+mb.onclick=()=>menuOn(true);$('#fecha-menu').onclick=()=>menuOn(false);
+$$('#menu a').forEach(a=>a.addEventListener('click',()=>menuOn(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Tab'){const painel=document.querySelector('.gaveta.on')||(menu.classList.contains('on')?menu:null);if(painel){const itens=[...painel.querySelectorAll('a[href],button,input,[tabindex="0"]')].filter(el=>!el.disabled);const a=itens[0],z=itens[itens.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}}if(e.key==='Escape'){fecha();menuOn(false)}});
+addEventListener('scroll',()=>$('#nav').classList.toggle('sombra',scrollY>40),{passive:true});
+/* movimento: entradas suaves, parallax dos recortes, menu que se recolhe */
+const calmo=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+const marca=(sel,cls='rv',escada=false)=>$$(sel).forEach((el,i)=>{el.classList.add(cls);if(escada)el.style.setProperty('--i',i%8);if(calmo)el.classList.add('in');else io.observe(el)});
+marca('.band:not(.topo-v) .rot');marca('.band:not(.topo-v) h2');marca('.duas>div:last-child>p',"rv",true);
+marca('.lista-nao li','rv',true);marca('.frase p');marca('.cab2>p');
+marca('.prin li','rv',true);marca('.lado','rv',true);marca('.foto-box');marca('.linha-tempo');marca('.detalhe');
+$$('.tag').forEach((el,i)=>{el.classList.add('rv-o');el.style.setProperty('--i',i);if(calmo)el.classList.add('in')});if(!calmo){const iot=new IntersectionObserver(es=>{if(es[0].isIntersecting){$$('.tag').forEach(t=>t.classList.add('in'));iot.disconnect()}},{threshold:.2});iot.observe($('#fio'))}marca('.valor');marca('.deck>div:first-child>p');marca('.monte');marca('.ctl');
+marca('details','rv',true);marca('.contato .logo');marca('.contato .btn');marca('.contato .info');
+if(!calmo){
+ const par=$$('[data-par]'),parx=$$('[data-parx]');let tick=false,ultimo=scrollY,direcao=0,trecho=0;const celular=matchMedia('(max-width:1020px)');
+ const upd=()=>{const vh=innerHeight;
+  par.forEach(el=>{const r=el.getBoundingClientRect(),c=Math.max(-1,Math.min(1,(r.top+r.height/2-vh/2)/vh));el.style.translate=`0 ${(-c*+el.dataset.par*120).toFixed(1)}px`;if(el.dataset.rot)el.style.rotate=`${(c*+el.dataset.rot).toFixed(2)}deg`});
+  parx.forEach(el=>{const r=el.getBoundingClientRect(),c=Math.max(-1,Math.min(1,(r.top+r.height/2-vh/2)/vh));el.style.translate=`${(c*+el.dataset.parx*140).toFixed(1)}px 0`});
+  tick=false};
+ addEventListener('scroll',()=>{const y=Math.max(0,Math.min(scrollY,document.documentElement.scrollHeight-innerHeight)),delta=y-ultimo;ultimo=y;
+  if(fundoY!==null||celular.matches){$('#nav').classList.remove('some');trecho=0;direcao=0}
+  else if(Math.abs(delta)>1){const d=Math.sign(delta);if(d!==direcao){direcao=d;trecho=0}trecho+=Math.abs(delta);if(y<120||d<0&&trecho>24)$('#nav').classList.remove('some');else if(y>500&&d>0&&trecho>72)$('#nav').classList.add('some')}
+  if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
+ addEventListener('resize',upd);upd();
+}
+
+
+const ris=$$('#esperas .risco');
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){ris.forEach(l=>l.classList.add('on'));$('#resp').classList.add('ve')}
+else{ris.forEach((l,i)=>setTimeout(()=>l.classList.add('on'),900+i*700));setTimeout(()=>$('#resp').classList.add('ve'),900+ris.length*700+300)}
+}
+</script>
+</body>
+</html>
