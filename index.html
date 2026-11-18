@@ -312,6 +312,17 @@ body.inicio-visivel::after{opacity:1}
  .topo-v .ticker{margin-top:0;flex:none;padding:14px 0 calc(18px + env(safe-area-inset-bottom,0px))}
 }
 
+/* Ajuste pelo print do iPhone: faixa abaixo dos controles e CTAs empilhados. */
+@media(max-width:600px){
+ .topo-v{min-height:calc(100dvh + 72px);padding-left:20px;padding-right:20px}
+ .topo-v .wrap{flex:0 0 auto;min-height:calc(100dvh - 88px - env(safe-area-inset-top,0px) - 62px - env(safe-area-inset-bottom,0px));gap:20px}
+ .topo-v .esperas{max-width:none;width:100%;text-align:left}
+ .topo-v .esperas .resp{display:block;white-space:nowrap;margin-top:8px}
+ .topo-v .acoes{grid-template-columns:1fr;gap:10px;width:100%}
+ .topo-v .acoes .btn{min-height:48px;font-size:15px}
+ .topo-v .ticker{margin-top:72px}
+}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv,.rv-o,.entra{opacity:1;transform:none}}
 </style>
 </head>
