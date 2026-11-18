@@ -261,7 +261,7 @@ nav{top:calc(14px + env(safe-area-inset-top,0px))}
 .menu-btn i::after{top:8px}
 .menu-label{position:absolute;right:17px;opacity:1;transition:opacity .2s .28s,transform .35s .2s}
 .menu-ativo nav{z-index:60;background:transparent;box-shadow:none;backdrop-filter:none;pointer-events:none}
-.menu-ativo nav .marca{opacity:0;pointer-events:none}
+.menu-ativo nav .marca{pointer-events:none}
 .menu-ativo .menu-btn{pointer-events:auto}
 .menu-aberto .menu-btn{width:44px;background:var(--menu-vermelho)}
 .menu-aberto .menu-btn i{left:14px}
@@ -289,6 +289,27 @@ nav{top:calc(14px + env(safe-area-inset-top,0px))}
  .topo-v .acoes{display:grid;grid-template-columns:.85fr 1.35fr;gap:8px;margin-top:20px}
  .topo-v .acoes .btn{min-height:46px;padding:10px 10px;font-size:13px;line-height:1.2;text-align:center}
  .topo-v .ticker{margin-top:auto;padding:12px 0}
+}
+
+/* A superfície creme e a marca esmaecem sem afetar o botão Menu/X. */
+nav{background:transparent;isolation:isolate}
+nav::before{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--creme);z-index:-1;opacity:1;transition:opacity .42s ease .12s;pointer-events:none}
+nav .marca{opacity:1;transition:opacity .42s ease .12s}
+.menu-aberto nav::before,.menu-aberto nav .marca{opacity:0;transition-delay:0s}
+body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:env(safe-area-inset-bottom,0px);background:var(--vinho);z-index:29;pointer-events:none;opacity:0;transition:opacity .3s}
+body.inicio-visivel::after{opacity:1}
+/* Gavetas: entrada e saída por esmaecimento, com deslocamento discreto. */
+.gaveta{opacity:0;transform:translateX(18px);transition:opacity .42s ease,transform .48s cubic-bezier(.2,.7,.2,1),visibility 0s .48s;padding-top:calc(28px + env(safe-area-inset-top,0px));padding-bottom:calc(48px + env(safe-area-inset-bottom,0px))}
+.gaveta.on{opacity:1;transform:none;visibility:visible;transition:opacity .42s ease,transform .48s cubic-bezier(.2,.7,.2,1)}
+#sobre strong,#g-sobre strong{font-weight:500;color:var(--vinho)}
+@media(max-width:600px){
+ .topo-v{min-height:100svh;min-height:100dvh}
+ .topo-v .wrap{flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(16px,3svh,28px);padding-bottom:28px}
+ .topo-v .rot{font-size:11px;line-height:1.4;max-width:34ch;margin:0}
+ .topo-v h1{font-size:clamp(36px,min(11vw,6.9svh),46px)}
+ .topo-v .esperas{margin:0;font-size:clamp(18px,2.8svh,21px);line-height:1.35}
+ .topo-v .acoes{margin:0}
+ .topo-v .ticker{margin-top:0;flex:none;padding:14px 0 calc(18px + env(safe-area-inset-bottom,0px))}
 }
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv,.rv-o,.entra{opacity:1;transform:none}}
@@ -394,7 +415,7 @@ nav{top:calc(14px + env(safe-area-inset-top,0px))}
     <div>
       <p class="rot" style="color:var(--vinho)">Sobre mim · CRP 11/18345</p>
       <h2>Taciliany <em>Kedelh Gomes Rêgo</em></h2>
-      <p style="margin-top:24px">Psicóloga desde 2021. Passei pela clínica, pela escola, pelo plantão psicológico e por três anos de CAPS no interior do Ceará. Foi ali que aprendi que sofrimento não se entende só por dentro: história, trabalho, acesso a direitos e desigualdade também contam.</p>
+      <p style="margin-top:24px"><strong>Psicóloga desde 2021.</strong> Passei pela clínica, pela escola, pelo plantão psicológico e por <strong>três anos de CAPS</strong> no interior do Ceará. Foi ali que aprendi que sofrimento não se entende só por dentro: história, trabalho, acesso a direitos e desigualdade também contam.</p>
       <div class="linha-tempo" role="group" aria-label="Trajetória" id="trajeto"></div>
       <div class="detalhe" id="trajeto-txt" aria-live="polite"></div>
       <button class="btn" data-gaveta="g-sobre" style="margin-top:22px">Ler a apresentação completa</button>
@@ -445,7 +466,7 @@ nav{top:calc(14px + env(safe-area-inset-top,0px))}
   <img class="logo" src="logo-principal-creme.svg" alt="Taciliany Rêgo, psicóloga, CRP 11/18345">
   <h2>Você não precisa chegar pronta. <em>Podemos começar de onde for possível.</em></h2>
   <a class="btn claro" href="https://wa.me/5585999558473" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
-  <div class="info"><span>(85) 99955-8473</span><span>taciliany.psi@gmail.com</span><a href="https://instagram.com/tacy.psi" target="_blank" rel="noopener">@tacy.psi</a></div>
+  <div class="info"><span>(85) 99955-8473</span><span>taciliany.psi@gmail.com</span><a href="https://instagram.com/tacilianyregopsi" target="_blank" rel="noopener">@tacilianyregopsi</a></div>
   <img class="pano" data-parx="-.4" src="panorama-creme.svg" alt="" loading="lazy">
 </section>
 
@@ -459,9 +480,9 @@ nav{top:calc(14px + env(safe-area-inset-top,0px))}
   <button class="fechar" aria-label="Fechar">×</button>
   <p class="rot">Sobre mim</p>
   <h2>Apresentação <em>completa</em></h2>
-  <p>Sou psicóloga desde 2021. Durante a formação, participei da extensão do LAPFES-UFC (Psicoterapia, Fenomenologia e Sociedade), com estudos, ensino e plantão psicológico. Depois fiz especialização em Neuropsicologia na Unifor.</p>
-  <p>Trabalhei com Psicologia Escolar, plantão psicológico e saúde mental, incluindo três anos de CAPS no interior do Ceará. Essas experiências me aproximaram de formas de sofrimento que não se explicam só por características individuais.</p>
-  <p>Hoje atendo na clínica individual, online, e faço plantão psicológico em contexto organizacional.</p>
+  <p>Sou <strong>psicóloga desde 2021</strong>. Durante a formação, participei da <strong>extensão do LAPFES-UFC</strong> (Psicoterapia, Fenomenologia e Sociedade), com estudos, ensino e plantão psicológico. Depois fiz <strong>especialização em Neuropsicologia na Unifor</strong>.</p>
+  <p>Trabalhei com <strong>Psicologia Escolar, plantão psicológico e saúde mental</strong>, incluindo <strong>três anos de CAPS</strong> no interior do Ceará. Essas experiências me aproximaram de formas de sofrimento que não se explicam só por características individuais.</p>
+  <p>Hoje atendo na <strong>clínica individual, online</strong>, e faço <strong>plantão psicológico em contexto organizacional</strong>.</p>
   <p>Na clínica, valorizo a escuta, o estudo contínuo e o pensamento crítico. Me interessa como as expectativas sociais atravessam a vida de cada mulher, sem supor que todas vivam isso do mesmo jeito. Não acredito em respostas universais nem em fórmulas para experiências complexas.</p>
   <p>Também não parto da ideia de que questionar normas seja, por si só, um problema psicológico. A proposta não é te adaptar a outro modelo de vida, e sim abrir espaço para entender o que faz sentido, o que produz sofrimento e o que dá para construir a partir da sua realidade.</p>
 </aside>
@@ -477,6 +498,8 @@ nav{top:calc(14px + env(safe-area-inset-top,0px))}
 <script>
 {
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+document.body.classList.add('inicio-visivel');
+const corInicio=new IntersectionObserver(es=>{document.body.classList.toggle('inicio-visivel',es[0].isIntersecting)},{threshold:0});corInicio.observe($('#inicio'));
 const ge=(n,cor,cls='')=>`<svg class="ge ${cls}" style="color:${cor}" aria-hidden="true"><use href="#g${n}"/></svg>`;
 
 const tk=["Você não precisa chegar pronta","Pode falar palavrão","Pode ficar em silêncio","Pode discordar de mim","Pode rir de coisas difíceis","Não precisa contar tudo de uma vez"];
