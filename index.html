@@ -30,6 +30,7 @@
 <link rel="preload" href="fonts/CormorantGaramond-Regular.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="fonts/InstrumentSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
 <style>
+@font-face{font-family:"Cormorant Garamond";src:url("fonts/CormorantGaramond-Italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
 @font-face{font-family:"Cormorant Garamond";src:url("fonts/CormorantGaramond-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Instrument Sans";src:url("fonts/InstrumentSans-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Instrument Sans";src:url("fonts/InstrumentSans-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
@@ -277,20 +278,6 @@ nav{top:calc(14px + env(safe-area-inset-top,0px))}
  .menu>.btn{opacity:0;transform:translateY(10px);transition:opacity .18s,transform .18s}
  .menu.on>.btn{opacity:1;transform:none;transition-duration:.5s;transition-delay:.5s}
 }
-/* A primeira tela considera as barras abertas do navegador e as áreas seguras. */
-@media(max-width:600px){
- nav{backdrop-filter:none;background:var(--creme)}
- .topo-v{min-height:100svh;padding-top:calc(88px + env(safe-area-inset-top,0px));justify-content:flex-start}
- .topo-v .wrap{padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
- .topo-v .rot{max-width:32ch;font-size:10px;line-height:1.4;letter-spacing:.12em;margin-bottom:16px}
- .topo-v h1{font-size:clamp(34px,min(10.3vw,6.6svh),44px);line-height:1.02;max-width:72%}
- .topo-v .simb{width:42vw;top:24%;right:-13vw}
- .esperas{font-size:clamp(17px,2.7svh,20px);line-height:1.32;margin-top:18px;max-width:100%}
- .topo-v .acoes{display:grid;grid-template-columns:.85fr 1.35fr;gap:8px;margin-top:20px}
- .topo-v .acoes .btn{min-height:46px;padding:10px 10px;font-size:13px;line-height:1.2;text-align:center}
- .topo-v .ticker{margin-top:auto;padding:12px 0}
-}
-
 /* A superfície creme e a marca esmaecem sem afetar o botão Menu/X. */
 nav{background:transparent;isolation:isolate}
 nav::before{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--creme);z-index:-1;opacity:1;transition:opacity .42s ease .12s;pointer-events:none}
@@ -302,25 +289,21 @@ body.inicio-visivel::after{opacity:1}
 .gaveta{opacity:0;transform:translateX(18px);transition:opacity .42s ease,transform .48s cubic-bezier(.2,.7,.2,1),visibility 0s .48s;padding-top:calc(28px + env(safe-area-inset-top,0px));padding-bottom:calc(48px + env(safe-area-inset-bottom,0px))}
 .gaveta.on{opacity:1;transform:none;visibility:visible;transition:opacity .42s ease,transform .48s cubic-bezier(.2,.7,.2,1)}
 #sobre strong,#g-sobre strong{font-weight:500;color:var(--vinho)}
+/* Topo móvel fiel ao print aprovado: proporções por largura, fluxo natural. */
 @media(max-width:600px){
- .topo-v{min-height:100svh;min-height:100dvh}
- .topo-v .wrap{flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(16px,3svh,28px);padding-bottom:28px}
- .topo-v .rot{font-size:11px;line-height:1.4;max-width:34ch;margin:0}
- .topo-v h1{font-size:clamp(36px,min(11vw,6.9svh),46px)}
- .topo-v .esperas{margin:0;font-size:clamp(18px,2.8svh,21px);line-height:1.35}
- .topo-v .acoes{margin:0}
- .topo-v .ticker{margin-top:0;flex:none;padding:14px 0 calc(18px + env(safe-area-inset-bottom,0px))}
-}
-
-/* Ajuste pelo print do iPhone: faixa abaixo dos controles e CTAs empilhados. */
-@media(max-width:600px){
- .topo-v{min-height:calc(100dvh + 72px);padding-left:20px;padding-right:20px}
- .topo-v .wrap{flex:0 0 auto;min-height:calc(100dvh - 88px - env(safe-area-inset-top,0px) - 62px - env(safe-area-inset-bottom,0px));gap:20px}
- .topo-v .esperas{max-width:none;width:100%;text-align:left}
- .topo-v .esperas .resp{display:block;white-space:nowrap;margin-top:8px}
- .topo-v .acoes{grid-template-columns:1fr;gap:10px;width:100%}
- .topo-v .acoes .btn{min-height:48px;font-size:15px}
- .topo-v .ticker{margin-top:72px}
+ html{scrollbar-width:none}html::-webkit-scrollbar{display:none}
+ nav{backdrop-filter:none}
+ .topo-v{min-height:0;padding:calc(100px + env(safe-area-inset-top,0px)) max(6vw,20px) 0;justify-content:flex-start}
+ .topo-v .wrap{display:block;flex:none;min-height:0;padding-bottom:12px}
+ .topo-v .rot{font-size:13px;line-height:1.65;letter-spacing:.14em;max-width:22ch;margin:0 0 22px}
+ .topo-v h1{font-size:min(11.5vw,64px);line-height:1.02;max-width:64%;text-wrap:initial}
+ .topo-v h1 .hero-linha{display:block;white-space:nowrap}
+ .topo-v .simb{width:46vw;right:-15vw;top:calc(176px + env(safe-area-inset-top,0px))}
+ .topo-v .esperas{max-width:none;width:100%;margin:34px 0 0;font-size:21px;line-height:1.45;text-align:left}
+ .topo-v .esperas .resp{display:inline-block;white-space:nowrap;margin:0}
+ .topo-v .acoes{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin:40px 0 0;width:100%}
+ .topo-v .acoes .btn{width:auto;min-height:52px;padding:0 28px;font-size:16px;line-height:1.2;text-align:center}
+ .topo-v .ticker{flex:none;margin-top:60px;padding:18px 0 calc(18px + env(safe-area-inset-bottom,0px))}
 }
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv,.rv-o,.entra{opacity:1;transform:none}}
@@ -366,7 +349,7 @@ body.inicio-visivel::after{opacity:1}
   <svg class="ge simb entra" data-par=".35" data-rot="5" viewBox="0 0 455 415" aria-hidden="true"><use href="#simbolo"/></svg>
   <div class="wrap">
     <p class="rot entra" style="--d:.2s">Psicoterapia online para mulheres adultas</p>
-    <h1 class="entra" style="--d:.35s">Para mulheres que não se reconhecem <em>no roteiro.</em></h1>
+    <h1 class="entra" style="--d:.35s"><span class="hero-linha">Para</span> <span class="hero-linha">mulheres</span> <span class="hero-linha">que não se</span> <span class="hero-linha">reconhecem</span> <em class="hero-linha">no roteiro.</em></h1>
     <p class="esperas entra" style="--d:.6s" id="esperas"><span class="risco">Ser agradável.</span> <span class="risco">Cuidar de todo mundo.</span> <span class="risco">Organizar a vida em torno de um relacionamento.</span> <span class="risco">Querer ser mãe.</span> <span class="risco">Desejar o que esperam que você deseje.</span> <span class="resp" id="resp">E o que você quer?</span></p>
     <div class="acoes entra" style="--d:.8s">
       <a class="btn claro" href="https://wa.me/5585999558473" target="_blank" rel="noopener">Fale comigo</a>
@@ -383,7 +366,7 @@ body.inicio-visivel::after{opacity:1}
       <h2>Talvez o que pese seja o <em>esforço de corresponder.</em></h2>
     </div>
     <div>
-      <p>Atendo mulheres que questionam padrões de feminilidade, recusam papéis que parecem obrigatórios, organizam afetos e projetos de outro jeito, ou só sentem que não cabem no roteiro que receberam.</p>
+      <p>Atendo mulheres que desejam pensar sobre si mesmas para além das expectativas que aprenderam a cumprir. Um espaço profissional para conversar sobre sofrimento, relações, escolhas, trabalho, corpo, identidade, autonomia, mudanças e experiências que nem sempre encontram lugar em outros contextos.</p>
       <p style="margin-top:28px">Para começar, você não precisa de:</p>
       <ul class="lista-nao">
         <li><span class="sem" aria-hidden="true">×</span><span>um diagnóstico</span></li><li><span class="sem" aria-hidden="true">×</span><span>saber nomear o que sente</span></li><li><span class="sem" aria-hidden="true">×</span><span>um motivo "grave o bastante"</span></li><li><span class="sem" aria-hidden="true">×</span><span>se definir como feminista, não materna ou qualquer outra coisa</span></li><li><span class="sem" aria-hidden="true">×</span><span>chegar ao limite</span></li>
