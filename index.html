@@ -309,14 +309,14 @@ body.inicio-visivel::after{opacity:1}
 .hero-desktop-line{display:contents}
 /* Notebook: título e respiros acompanham a altura disponível. */
 @media(min-width:861px){
- .topo-v{min-height:0;padding-top:clamp(96px,14svh,140px);justify-content:flex-start}
- .topo-v .wrap{padding-bottom:clamp(24px,4svh,48px)}
- .topo-v h1{font-size:clamp(48px,min(6vw,9svh),92px);max-width:none;line-height:1.02;text-wrap:initial}
+ .topo-v{height:100svh;min-height:600px;padding-top:clamp(96px,14svh,140px);justify-content:flex-start}
+ .topo-v .wrap{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;padding-bottom:clamp(24px,4svh,48px)}
+ .topo-v h1{font-size:clamp(44px,min(5.6vw,8svh),86px);max-width:none;line-height:1.02;text-wrap:initial}
  .topo-v h1 .hero-desktop-line{display:block;white-space:nowrap}
  .topo-v .rot{margin-bottom:clamp(14px,2.5svh,26px)}
  .topo-v .esperas{font-size:clamp(20px,2.8svh,25px);max-width:48ch;margin-top:clamp(18px,3svh,30px)}
  .topo-v .acoes{margin-top:clamp(20px,3.5svh,34px)}
- .topo-v .simb{width:min(48vw,680px);right:-9vw;top:15svh}
+ .topo-v .simb{width:auto;height:72svh;max-height:calc(100% - 150px);right:-7vw;top:auto;bottom:80px}
  .topo-v .ticker{flex:none;position:relative;background:var(--vinho)}
 }
 
