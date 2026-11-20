@@ -306,16 +306,18 @@ body.inicio-visivel::after{opacity:1}
  .topo-v .ticker{flex:none;margin-top:60px;padding:18px 0 calc(18px + env(safe-area-inset-bottom,0px))}
 }
 
+.hero-desktop-line{display:contents}
 /* Notebook: título e respiros acompanham a altura disponível. */
 @media(min-width:861px){
- .topo-v{min-height:100svh;padding-top:clamp(96px,14svh,140px);justify-content:space-between}
+ .topo-v{min-height:0;padding-top:clamp(96px,14svh,140px);justify-content:flex-start}
  .topo-v .wrap{padding-bottom:clamp(24px,4svh,48px)}
- .topo-v h1{font-size:clamp(48px,min(6vw,9svh),92px);max-width:min(64%,20ch);line-height:1.02;text-wrap:balance}
+ .topo-v h1{font-size:clamp(48px,min(6vw,9svh),92px);max-width:none;line-height:1.02;text-wrap:initial}
+ .topo-v h1 .hero-desktop-line{display:block;white-space:nowrap}
  .topo-v .rot{margin-bottom:clamp(14px,2.5svh,26px)}
  .topo-v .esperas{font-size:clamp(20px,2.8svh,25px);max-width:48ch;margin-top:clamp(18px,3svh,30px)}
  .topo-v .acoes{margin-top:clamp(20px,3.5svh,34px)}
  .topo-v .simb{width:min(48vw,680px);right:-9vw;top:15svh}
- .topo-v .ticker{flex:none}
+ .topo-v .ticker{flex:none;position:relative;background:var(--vinho)}
 }
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv,.rv-o,.entra{opacity:1;transform:none}}
@@ -361,7 +363,7 @@ body.inicio-visivel::after{opacity:1}
   <svg class="ge simb entra" data-par=".35" data-rot="5" viewBox="0 0 455 415" aria-hidden="true"><use href="#simbolo"/></svg>
   <div class="wrap">
     <p class="rot entra" style="--d:.2s">Psicoterapia online para mulheres adultas</p>
-    <h1 class="entra" style="--d:.35s"><span class="hero-linha">Para</span> <span class="hero-linha">mulheres</span> <span class="hero-linha">que não se</span> <span class="hero-linha">reconhecem</span> <em class="hero-linha">no roteiro.</em></h1>
+    <h1 class="entra" style="--d:.35s"><span class="hero-desktop-line"><span class="hero-linha">Para</span> <span class="hero-linha">mulheres</span></span> <span class="hero-desktop-line"><span class="hero-linha">que não se</span> <span class="hero-linha">reconhecem</span></span> <span class="hero-desktop-line"><em class="hero-linha">no roteiro.</em></span></h1>
     <p class="esperas entra" style="--d:.6s" id="esperas"><span class="risco">Ser agradável.</span> <span class="risco">Cuidar de todo mundo.</span> <span class="risco">Organizar a vida em torno de um relacionamento.</span> <span class="risco">Querer ser mãe.</span> <span class="risco">Desejar o que esperam que você deseje.</span> <span class="resp" id="resp">E o que você quer?</span></p>
     <div class="acoes entra" style="--d:.8s">
       <a class="btn claro" href="https://wa.me/5585999558473" target="_blank" rel="noopener">Fale comigo</a>
